@@ -5,11 +5,19 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   plugins: [vue()],
   server: {
-    historyApiFallback: true, // 允许在路由跳转时自动回到 index.html
+    historyApiFallback: true,
   },
   resolve: {
     alias: {
       '@': '/src',
     },
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      }
+    }
+  }
 });

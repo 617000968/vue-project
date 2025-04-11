@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 后端 API 基础 URL
-const API_URL = "http://localhost:8080/api/users/login"; // 根据实际后端地址调整
+const API_URL = "http://localhost:8080/api/auth"; // 根据实际后端地址调整
 
 // 登录请求
 export const login = (username, password) => {
