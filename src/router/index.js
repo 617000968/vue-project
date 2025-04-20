@@ -51,7 +51,8 @@ const routes = [
   },
   {
     path: '/admin',
-    component: () => import('@/views/AdminPage.vue')
+    component: () => import('@/views/AdminPage.vue'),
+    meta: {hideNavbar: true}
   },
   {
     path: '/poll/anonymous/:anonymousCode', // 正确路径
@@ -59,6 +60,11 @@ const routes = [
     name: 'PollAnonymous',
     props: true,
     meta: {hideNavbar: true}
+  },
+  {
+    path: '/poll/active',
+    component: () => import('@/views/PollActive.vue'),
+    name: 'PollActive'
   }
 ];
 
